@@ -6,13 +6,10 @@ import (
 	"strings"
 
 	"github.com/born2ngopi/alterra/basic-echo-mvc/database"
-	"github.com/born2ngopi/alterra/basic-echo-mvc/internal/model"
 )
 
 // please add new model in next index for consistency migrate and rollback
-var tables = []interface{}{
-	&model.Product{},
-}
+var tables = []interface{}{}
 
 func Migrate() {
 
