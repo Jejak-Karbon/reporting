@@ -50,5 +50,6 @@ jobs:
         port: ${{ secrets.SSH_PORT }}
         script: |
           cd ~/apps/reporting
+          git pull development
           go run main.go
 
