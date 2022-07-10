@@ -25,6 +25,7 @@ func Rollback() {
 	for i := len(tables) - 1; i >= 0; i-- {
 		conn.Migrator().DropTable(tables[i])
 	}
+
 }
 
 func Status() {
