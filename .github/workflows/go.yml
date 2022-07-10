@@ -53,4 +53,4 @@ jobs:
           git checkout development
           git pull
           docker build -t jejakkarbon/reporting .
-          docker run --network="host" -d jejakkarbon/reporting:latest
+          docker run --network="host" -d jejakkarbon/reporting
