@@ -16,6 +16,7 @@ func Migrate() {
 	conn := database.GetConnection()
 
 	conn.AutoMigrate(tables...)
+
 }
 
 func Rollback() {
@@ -37,6 +38,7 @@ func Status() {
 	)
 
 	fmt.Printf("In database %s:\n", conn.Migrator().CurrentDatabase())
+
 	for _, table := range tables {
 		var name string
 
