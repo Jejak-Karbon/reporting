@@ -77,7 +77,7 @@ func (s *service) Find(ctx context.Context) ([]dto.CityMapping,error) {
 	return data[i].AmountAbsorption > data[j].AmountAbsorption
 	})
 	
-	return data[:3],nil
+	return data[:3],err
 
 }
 
