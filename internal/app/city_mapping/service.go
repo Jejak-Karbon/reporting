@@ -34,7 +34,7 @@ func (s *service) Find(ctx context.Context) ([]dto.CityMapping,error) {
 	url := "http://localhost:3000/user_product_carbon_absorption"
 
 	var client = &http.Client{}
-	request, err := http.NewRequest("GET", url, nil)
+	request, _ := http.NewRequest("GET", url, nil)
 
 	response, err := client.Do(request)
 	if err != nil {
@@ -77,7 +77,7 @@ func (s *service) Find(ctx context.Context) ([]dto.CityMapping,error) {
 	return data[i].AmountAbsorption > data[j].AmountAbsorption
 	})
 	
-	return data[:3],err
+	return data[:3],nil
 
 }
 
