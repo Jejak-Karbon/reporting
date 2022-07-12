@@ -38,7 +38,6 @@ func (s *service) Find(ctx context.Context) ([]dto.CityMapping,error) {
 
 	response, err := client.Do(request)
 	if err != nil {
-		panic(err)
 		return data,err
 	}
 	
