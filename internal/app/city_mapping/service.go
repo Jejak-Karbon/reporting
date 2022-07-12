@@ -31,7 +31,7 @@ func NewService(f *factory.Factory) Service {
 func (s *service) Find(ctx context.Context) ([]dto.CityMapping,error) {
 
 	var data []dto.CityMapping
-	url := "http://localhost:3000/user_product_carbon_absorption"
+	url := os.Getenv("URI_SERVICE_BALANCING") + "/user_product_carbon_absorption"
 
 	var client = &http.Client{}
 	request, _ := http.NewRequest("GET", url, nil)
