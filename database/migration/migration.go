@@ -6,19 +6,17 @@ import (
 	"strings"
 
 	"github.com/born2ngopi/alterra/basic-echo-mvc/database"
-	"github.com/born2ngopi/alterra/basic-echo-mvc/internal/model"
 )
 
 // please add new model in next index for consistency migrate and rollback
-var tables = []interface{}{
-	&model.Product{},
-}
+var tables = []interface{}{}
 
 func Migrate() {
 
 	conn := database.GetConnection()
 
 	conn.AutoMigrate(tables...)
+
 }
 
 func Rollback() {
@@ -28,6 +26,7 @@ func Rollback() {
 	for i := len(tables) - 1; i >= 0; i-- {
 		conn.Migrator().DropTable(tables[i])
 	}
+
 }
 
 func Status() {
@@ -39,6 +38,7 @@ func Status() {
 	)
 
 	fmt.Printf("In database %s:\n", conn.Migrator().CurrentDatabase())
+
 	for _, table := range tables {
 		var name string
 
